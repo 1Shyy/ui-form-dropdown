@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test cedro</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <span class="span">Локация</span>
+    <form id="make_checkbox_select">
+
+        <select name="ЖК,ОКРУГ,РАЙОН,МЕТРО">
+            <option>Академический</option>
+            <option>Басманный</option>
+            <option>Замоскворечье</option>
+            <option>Измайлово</option>
+            <option>Люблино</option>
+            <option>Саларьево</option>
+            <option>Измайлово</option>
+            <option>Люблино</option>
+            <option>Саларьево</option>
+        </select>
+        
+
+        
+      </form>
+<script src="scripts/scripts.js"></script>
+<script src="scripts/jquery.min.js"></script>
+<script>
+    $(function()
+{
+    var mySelectCheckbox = new checkbox_select(
+    {
+        selector : "#make_checkbox_select",
+        selected_translation : "selectat",
+        all_translation : "Toate marcile",
+        not_found : "Nici unul gasit",
+
+        // Event during initialization
+        onApply : function(e)
+        {
+            alert("Custom Event: " + e.selected);
+        }
+    });
+
+});
+</script>
+</body>
+</html>
