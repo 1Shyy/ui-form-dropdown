@@ -1,14 +1,10 @@
 body
 {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   color: #07000F;
   font-size: 16px;
 }
 
-h1
-{
-  font-weight: lighter;
-}
 .span
 {
     font-size: 14px;
@@ -16,23 +12,9 @@ h1
     font-weight: 400;
 }
 
-small
-{
-  color: rgb(195, 181, 181);
-}
-
-div.checkbox_select
-{
-  margin-top: 4px;
-  width: 320px;
-  background: url('Search.svg') left no-repeat;
-  background-position: left 15px top 16px;
-  
-}
-
 .active_div
 {
-  width: fill;
+  width: 320px;
   height: 48px;
   line-height: 48px;
   font-weight: bold;
@@ -40,7 +22,7 @@ div.checkbox_select
   border: 1px solid #07000F66;
   display: flex;
   justify-content: space-between;
-  background: #02162D0D;
+  background: url('img/Search.svg') no-repeat center left 16px #02162D0D;
   color: #07000F;
   cursor: pointer;
   box-sizing: border-box;
@@ -59,96 +41,172 @@ div.checkbox_select
     line-height: 32px;
 }
 
-
-
-div.checkbox_select .select_input
-{
-    width: 100%;
-    cursor: pointer;
-}
-
-.checkbox_select_dropdown
-{
-    display: none;
-    background: whitesmoke;
-}
-
-.checkbox_select_dropdown.show
-{
+.dropdown{
+    width: 320px;
     display: block;
     border-radius: 12px;
     border: 1px solid #07000F1A;
     margin-top: 8px;
     background: #FFFFFF;
 }
+.selected {
+    height: 56px;
+    border-bottom: 1px solid #dee2e6;
+    padding-left: 12px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
 
-.checkbox_select_dropdown ul
-{
-    max-height: 354px;
+.selected::-webkit-scrollbar {
+    height: 10px;
+}
+.selected::-webkit-scrollbar-thumb {
+    z-index: 10;
+    background-color: #07000F1A;    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    background-clip: content-box;
+    border: 4px solid rgb(255, 255, 255);  /* padding вокруг плашки */
+}
+
+
+.select_block {
+    margin-left: 4px;
+
+    height: 32px;
+    font-size: 14px;
+    border-radius: 8px;
+    background: #02162D0D;
+    border: 1px solid #07000F1A;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 32px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'roboto bold';
+}
+.selected_text {
+    margin-left: 12px;
+}
+.selected_btn {
+    margin-left: 4px;
+    margin-right: 8px;
+    min-width: 16px;
+    height: 30px;
+    background: url(img/Vector.svg) center no-repeat;
+}
+.container {
+    width: 100%;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+  }
+
+  .tab {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content:target {
+    display: block;
+  }
+
+  .tab-nav {
+    height: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #dee2e6;
+    order: -1;
+    font-family: 'roboto bold';
+  }
+
+  .tab-link {
+    margin-left: 8px;
+    padding: 0 8px;
+    height: 48px;
+    line-height: 48px;
+    display: block;
+    text-decoration: none;
+    border: 1px solid transparent;
+    color: #07000F66;
+    font-weight: bold;
+    -webkit-appearance: button;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  }
+
+  #content-1:target~.tab-nav>[href="#content-1"],
+  #content-2:target~.tab-nav>[href="#content-2"],
+  #content-3:target~.tab-nav>[href="#content-3"],
+  #content-4:target~.tab-nav>[href="#content-4"] {
+    width: fit-content;
+    color: #07000F;
+    cursor: default;
+    border-bottom: 1px solid #07000F;
+  }
+.tab-content ul{
+    max-height: 240px;
     overflow-y: scroll;
     overflow-x: hidden;
     padding: 0;
-  margin: 0;
-
-  border-top: 0;
-  border-bottom: 0;
+    margin: 8px 0 0 0;
 }
 
-.checkbox_select_dropdown ul::-webkit-scrollbar {
+.tab-content ul::-webkit-scrollbar {
     width: 14px;
 }
-  .checkbox_select_dropdown ul::-webkit-scrollbar-thumb {
+.tab-content ul::-webkit-scrollbar-thumb {
     background-color: #07000F;    /* цвет плашки */
     border-radius: 20px;       /* закругления плашки */
     background-clip: content-box;
     border: 5px solid rgb(255, 255, 255);  /* padding вокруг плашки */
 }
-.checkbox_select_dropdown ul li
-{
-    list-style: none;
-    position: relative;
-    display: block;
-    width: 320px;
-    height: 48px;
-}
-.checkbox_select_dropdown ul li label
-{
+
+.tab-content li{
+    margin: 0 auto;
     width: 288px;
     height: 48px;
     line-height: 48px;
-    position: relative;
-    padding-left: 16px;
-    display: inline-block;
-    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
-.checkbox_select_dropdown ul li div
-{
-    display: inline-block;
-    right: 16px;
-    position: absolute;
-    height: 32px;
+.tab-content input{
     width: 32px;
-    margin-top: 8px;
-}
-
-.checkbox_select_dropdown ul li div input{
-    z-index:1;
-    width:32px; 
-    height:32px;
-    margin: 0;
-    box-sizing: border-box;
+    height: 32px;
     border-radius: 50%;
     border: 1px solid #07000F1A;
     appearance: none;
     -moz-appearance: none;
-    outline: none;
-    cursor: pointer;
-}
-.checkbox_select_dropdown ul li div input:checked{
-    background: url(Tick.svg) no-repeat center #0067FE;
+    margin-top: 8px;
 }
 
-.hide
-{
-    display: none;
+.tab-content input:checked{
+    background: url('img/Tick.svg') no-repeat center #0067FE;
+}
+
+.hidden{
+    display: none
+}
+
+.tab-content:after{
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 80px;
+    margin-top: -80px;
+    background: linear-gradient(transparent, white);
+    pointer-events: none;
+  }
+
+@font-face {
+    font-family: 'roboto';
+    src: url(fonts/RobotoCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'roboto bold';
+    src: url(fonts/RobotoCondensed-Bold.ttf);
 }

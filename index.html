@@ -1,52 +1,162 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test cedro</title>
-    <link rel="stylesheet" href="style.css">
-
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>test</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+</html>
 <body>
-    <span class="span">Локация</span>
-    <form id="make_checkbox_select">
-
-        <select name="ЖК,ОКРУГ,РАЙОН,МЕТРО">
-            <option>Академический</option>
-            <option>Басманный</option>
-            <option>Замоскворечье</option>
-            <option>Измайлово</option>
-            <option>Люблино</option>
-            <option>Саларьево</option>
-            <option>Измайлово</option>
-            <option>Люблино</option>
-            <option>Саларьево</option>
-        </select>
-        
-
-        
-      </form>
-<script src="scripts/scripts.js"></script>
+    <div class="span">Локация</div>
+    <div class="active_div" onclick="apply()">
+        <div>ЖК,ОКРУГ,РАЙОН,МЕТРО</div>
+        <div class="hidden" id="init_div"></div>
+    </div>
+    <div class="hidden" id="apply">
+        <div class="container">
+            <div class="tab">
+                <div id="selected" class="hidden"></div>
+                <div class="tab-content" id="content-1">
+                    <ul>
+                        <li>
+                            <a>Академический</a>
+                            <input name="" id="l" type="checkbox" onchange="checkboxes('Академический', 'l')">
+                        </li>
+                        <li>
+                            <a>Басманный</a>
+                            <input name="" id="l1" type="checkbox" onchange="checkboxes('Басманный','l1')">
+                        </li>
+                        <li>
+                            <a>Замоскворечье</a>
+                            <input name="" id="l2" type="checkbox" onchange="checkboxes('Замоскворечье','l2')">
+                        </li>
+                        <li>
+                            <a>Измайлово</a>
+                            <input name="" id="l3" type="checkbox" onchange="checkboxes('Измайлово','l3')">
+                        </li>
+                        <li>
+                            <a>Люблино</a>
+                            <input name="" id="l4" type="checkbox" onchange="checkboxes('Люблино', 'l4')">
+                        </li>
+                        <li>
+                            <a>Саларьево</a>
+                            <input name="" id="l5" type="checkbox" onchange="checkboxes('Саларьево', 'l5')">
+                        </li>
+                        <li>
+                            <a>Черкизово</a>
+                            <input name="" id="l6" type="checkbox" onchange="checkboxes('Черкизово', 'l6')">
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="content-2">
+                    <ul>
+                        <li>
+                            <a>ЦАО</a>
+                            <input name="" id="o1" type="checkbox" onchange="checkboxes('ЦАО', 'o1')">
+                        </li>
+                        <li>
+                            <a>ЗАО</a>
+                            <input name="" id="o2" type="checkbox" onchange="checkboxes('ЗАО', 'o2')">
+                        </li>
+                        <li>
+                            <a>СЗАО</a>
+                            <input name="" id="03" type="checkbox" onchange="checkboxes('СЗАО', 'o3')">
+                        </li>
+                        <li>
+                            <a>САО</a>
+                            <input name="" id="o4" type="checkbox" onchange="checkboxes('САО', 'o4')">
+                        </li>
+                        <li>
+                            <a>СВАО</a>
+                            <input name="" id="o5" type="checkbox" onchange="checkboxes('СВАО', 'o5')">
+                        </li>
+                        <li>
+                            <a>ВАО</a>
+                            <input name="" id="o6" type="checkbox" onchange="checkboxes('ВАО', 'o6')">
+                        </li>
+                        <li>
+                            <a>ЮВАО</a>
+                            <input name="" id="o7" type="checkbox" onchange="checkboxes('ЮВАО', 'o7')">
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="content-3">
+                    <ul>
+                        <li>
+                            <a>Тверской</a>
+                            <input name="" id="r1" type="checkbox" onchange="checkboxes('Тверской', 'r1')">
+                        </li>
+                        <li>
+                            <a>Таганский</a>
+                            <input name="" id="r2" type="checkbox" onchange="checkboxes('Таганский', 'r2')">
+                        </li>
+                        <li>
+                            <a>Басманный</a>
+                            <input name="" id="r3" type="checkbox" onchange="checkboxes('Басманный', 'r3')">
+                        </li>
+                        <li>
+                            <a>Мещанский</a>
+                            <input name="" id="r4" type="checkbox" onchange="checkboxes('Мещанский', 'r4')">
+                        </li>
+                        <li>
+                            <a>Сокольники</a>
+                            <input name="" id="r5" type="checkbox" onchange="checkboxes('Сокольники', 'r5')">
+                        </li>
+                        <li>
+                            <a>Дорогомилово</a>
+                            <input name="" id="r6" type="checkbox" onchange="checkboxes('Дорогомилово', 'r6')">
+                        </li>
+                        <li>
+                            <a>Черкизово</a>
+                            <input name="" id="r7" type="checkbox" onchange="checkboxes('Черкизово', 'r7')">
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content" id="content-4">
+                    <ul>
+                        <li>
+                            <a>Новослободская</a>
+                            <input name="" id="m1" type="checkbox" onchange="checkboxes('Новослободская', 'm1')">
+                        </li>
+                        <li>
+                            <a>Маяковская</a>
+                            <input name="" id="m2" type="checkbox" onchange="checkboxes('Маяковская', 'm2')">
+                        </li>
+                        <li>
+                            <a>Комсомольская</a>
+                            <input name="" id="m3" type="checkbox" onchange="checkboxes('Комсомольская', 'm3')">
+                        </li>
+                        <li>
+                            <a>Новокузнецкая</a>
+                            <input name="" id="m4" type="checkbox" onchange="checkboxes('Новокузнецкая', 'm4')">
+                        </li>
+                        <li >
+                            <a>Площадь революции</a>
+                            <input name="" id="m5" type="checkbox" onchange="checkboxes('Площадь революции', 'm5')">
+                        </li>
+                        <li>
+                            <a>Таганская</a>
+                            <input name="" id="m6" type="checkbox" onchange="checkboxes('Таганская', 'm6')">
+                        </li>
+                        <li>
+                            <a>Арбатская</a>
+                            <input name="" id="m7" type="checkbox" onchange="checkboxes('Арбатская', 'm7')">
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-nav">
+                    <a class="tab-link" href="#content-1">ЖК</a>
+                    <a class="tab-link" href="#content-2">ОКРУГ</a>
+                    <a class="tab-link" href="#content-3">РАЙОН</a>
+                    <a class="tab-link" href="#content-4">МЕТРО</a>
+                </div>
+                <div class="grad"></div>
+            </div>
+        </div>
+    </div>
 <script src="scripts/jquery.min.js"></script>
-<script>
-    $(function()
-{
-    var mySelectCheckbox = new checkbox_select(
-    {
-        selector : "#make_checkbox_select",
-        selected_translation : "selectat",
-        all_translation : "Toate marcile",
-        not_found : "Nici unul gasit",
-
-        // Event during initialization
-        onApply : function(e)
-        {
-            alert("Custom Event: " + e.selected);
-        }
-    });
-
-});
-</script>
+<script src="scripts/scripts.js"></script>
 </body>
 </html>
