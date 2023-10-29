@@ -72,14 +72,13 @@ $('.tab-content ul').scroll(function() {
         var count = $(':checkbox:checked').length;
         console.log(verticalScrollPx)
                 if (count === 0) {
-                    if (verticalScrollPx < 15) {
+                    if (verticalScrollPx < 15 && verticalScrollPx > 0) {
                         $('.before').css('display', 'none')
                         
                     }
                     else if (verticalScrollPx > 14 && verticalScrollPx < 30) {
                         $('.before').css('display', 'block')
                         $('.after').css('display', 'block')
-                        console.log('1')
                     }
                     if (verticalScrollPx > 31) {
                         $('.after').css('display', 'none')

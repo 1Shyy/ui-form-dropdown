@@ -147,6 +147,7 @@ body
     border-bottom: 1px solid #07000F;
   }
 .tab-content ul{
+    
     max-height: 292px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -165,8 +166,9 @@ body
 }
 
 .tab-content li{
+    padding-left: 16px;
     margin: 0 auto;
-    width: 288px;
+    width: 293px;
     height: 48px;
     line-height: 48px;
     display: flex;
