@@ -11,7 +11,7 @@
 <body>
     <div class="span">Локация</div>
     <div class="active_div" onclick="apply()">
-        <div>ЖК,ОКРУГ,РАЙОН,МЕТРО</div>
+        <div>ЖК, ОКРУГ, РАЙОН, МЕТРО</div>
         <div class="hidden" id="init_div"></div>
     </div>
     <div class="hidden" id="apply">
@@ -19,6 +19,7 @@
             <div class="tab">
                 <div id="selected" class="hidden"></div>
                 <div class="tab-content" id="content-1">
+                    <div class="before"></div>
                     <ul>
                         <li>
                             <a>Академический</a>
@@ -49,8 +50,11 @@
                             <input name="" id="l6" type="checkbox" onchange="checkboxes('Черкизово', 'l6')">
                         </li>
                     </ul>
+                    <div class="after"></div>
                 </div>
+                
                 <div class="tab-content" id="content-2">
+                    <div class="before"></div>
                     <ul>
                         <li>
                             <a>ЦАО</a>
@@ -81,8 +85,11 @@
                             <input name="" id="o7" type="checkbox" onchange="checkboxes('ЮВАО', 'o7')">
                         </li>
                     </ul>
+                    <div class="after"></div>
                 </div>
+                
                 <div class="tab-content" id="content-3">
+                    <div class="before"></div>
                     <ul>
                         <li>
                             <a>Тверской</a>
@@ -113,8 +120,11 @@
                             <input name="" id="r7" type="checkbox" onchange="checkboxes('Черкизово', 'r7')">
                         </li>
                     </ul>
+                    <div class="after"></div>
                 </div>
+                
                 <div class="tab-content" id="content-4">
+                    <div class="before"></div>
                     <ul>
                         <li>
                             <a>Новослободская</a>
@@ -145,6 +155,7 @@
                             <input name="" id="m7" type="checkbox" onchange="checkboxes('Арбатская', 'm7')">
                         </li>
                     </ul>
+                    <div class="after"></div>
                 </div>
                 <div class="tab-nav">
                     <a class="tab-link" href="#content-1">ЖК</a>

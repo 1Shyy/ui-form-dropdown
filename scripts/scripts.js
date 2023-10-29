@@ -16,11 +16,13 @@ function checkboxes(text, clas) {
         initDiv.classList.add('init_div');
         selected.classList.remove('hidden');
         selected.classList.add('selected');
+        $('.tab-content ul').css('max-height', '236px')
     }
     else {
         initDiv.classList.add('hidden');
         selected.classList.remove('selected');
         selected.classList.add('hidden');
+        $('.tab-content ul').css('max-height', '292px')
     }
     if (child.checked) {
         var newDiv = $("<div>");
@@ -55,10 +57,43 @@ function deleteItem(clas) {
         initDiv.classList.add('init_div');
         selected.classList.remove('hidden');
         selected.classList.add('selected');
+        $('.tab-content ul').css('max-height', '236px')
     }
     else {
         initDiv.classList.add('hidden');
         selected.classList.remove('selected');
         selected.classList.add('hidden');
+        $('.tab-content ul').css('max-height', '292px')
     }
 }
+
+$('.tab-content ul').scroll(function() {
+        const verticalScrollPx = $('.tab-content ul').scrollTop();
+        var count = $(':checkbox:checked').length;
+        console.log(verticalScrollPx)
+                if (count === 0) {
+                    if (verticalScrollPx < 15) {
+                        $('.before').css('display', 'none')
+                        
+                    }
+                    else if (verticalScrollPx > 14 && verticalScrollPx < 30) {
+                        $('.before').css('display', 'block')
+                        $('.after').css('display', 'block')
+                        console.log('1')
+                    }
+                    if (verticalScrollPx > 31) {
+                        $('.after').css('display', 'none')
+                    }
+                } else {
+                    if (verticalScrollPx < 15) {
+                        $('.before').css('display', 'none')
+                    }
+                    else if (verticalScrollPx > 14 && verticalScrollPx < 86) {
+                        $('.before').css('display', 'block')
+                        $('.after').css('display', 'block')
+                    }
+                    else if (verticalScrollPx > 85) {
+                        $('.after').css('display', 'none')
+                    }
+                }
+});
