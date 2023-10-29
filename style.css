@@ -57,6 +57,8 @@ body
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #07000F1A rgb(255, 255, 255);
 }
 
 .selected::-webkit-scrollbar {
@@ -133,7 +135,6 @@ body
     text-decoration: none;
     border: 1px solid transparent;
     color: #07000F66;
-    font-weight: bold;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
   }
 
@@ -153,6 +154,9 @@ body
     overflow-x: hidden;
     padding: 0;
     margin: 8px 0 0 0;
+    scrollbar-width: thin;
+    scrollbar-color: #07000F rgb(255, 255, 255);
+    scroll-padding: 50px;
 }
 
 .tab-content ul::-webkit-scrollbar {
